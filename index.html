@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Binaire getallen | FTRPRF</title>
+  <meta name="description" content="Oefen het omzetten van decimale naar binaire getallen en terug.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <div class="topbar">
+      <a class="logo" href="https://www.ftrprf.be" target="_blank" rel="noopener"><img class="logo-dots" src="logo.png" alt="FTRPRF"><img class="logo-text" src="logo.png" alt="" aria-hidden="true"></a>
+      <a class="nav-link" href="scores.html">🏆 Highscores</a>
+    </div>
+    <div class="hero-inner">
+      <span class="pill">IT&amp;ME · Module Bits &amp; Bytes</span>
+      <h1>Binaire <span class="hl">getallen</span></h1>
+      <p>Zet decimale getallen om naar binair en terug. Los 6 opdrachten op zo snel mogelijk en met zo weinig mogelijk fouten!</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="status">
+        <div class="chips">
+          <span class="chip" id="spelerChip">👤 <span id="spelerNaam">–</span></span>
+          <span class="chip">⏱️ <span id="timer">0:00</span></span>
+          <span class="chip pink">❌ <span id="foutenTeller">0</span> fouten</span>
+        </div>
+        <span class="chip">⭐ <span>Score <span id="score">0</span>/6</span></span>
+      </div>
+
+      <div class="progress" id="progress">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="progress-labels"><span>Decimaal → binair</span><span>Binair → decimaal</span></div>
+
+      <h2 class="question" id="opgavetekst"></h2>
+      <div id="opgave" aria-live="polite"></div>
+
+      <form class="answer-row" id="antwoordForm" autocomplete="off">
+        <label for="antwoord">Vul hier je antwoord in:</label>
+        <input class="input" type="text" id="antwoord" inputmode="numeric" spellcheck="false">
+        <button class="btn btn-primary" type="submit" id="button">Controleer ✓</button>
+      </form>
+
+      <div class="feedback" id="feedback" role="status"></div>
+
+      <details class="helper">
+        <summary>Hulp nodig? Gebruik de bit-rekenmachine</summary>
+        <p>Elke positie in een binair getal heeft een waarde. Klik op de bits om ze aan of uit te zetten en kijk welk decimaal getal je krijgt.</p>
+        <div class="bits" id="bits"></div>
+        <div class="bit-sum">Binair <strong id="bitBin">00000000</strong> = decimaal <strong id="bitDec">0</strong></div>
+      </details>
+    </section>
+  </main>
+
+  <footer>Uit <strong>IT&amp;ME</strong> · module <strong>Bits &amp; Bytes</strong> &nbsp;|&nbsp; &copy; <a href="https://www.ftrprf.be" target="_blank" rel="noopener">FTRPRF.be</a></footer>
+
+  <!-- Naam invullen -->
+  <div class="modal show" id="naamModal">
+    <form class="modal-box" id="naamForm">
+      <div class="emoji">👋</div>
+      <h2>Welkom!</h2>
+      <p>Vul je naam in zodat je score in de highscorelijst komt.</p>
+      <input class="input" type="text" id="naamInput" maxlength="20" placeholder="Jouw naam" required>
+      <button class="btn btn-primary" type="submit">Start de oefening 🚀</button>
+    </form>
+  </div>
+
+  <!-- Einde spel -->
+  <div class="modal" id="eindModal">
+    <div class="modal-box">
+      <div class="emoji">🎉</div>
+      <h2>Goed gedaan, <span id="eindNaam"></span>!</h2>
+      <p>Je vond alle juiste antwoorden. De tijd van de gifjes hebben we er al afgetrokken.</p>
+      <div class="stats">
+        <div class="stat"><b id="eindTijd">0:00</b><span>tijd</span></div>
+        <div class="stat"><b id="eindFouten">0</b><span>fouten</span></div>
+      </div>
+      <button class="btn btn-primary" id="opnieuwBtn">Nog een keer 🔁</button>
+      <a class="btn btn-secondary" href="scores.html">Bekijk highscores 🏆</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

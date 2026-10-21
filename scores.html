@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Highscores | FTRPRF</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <div class="topbar">
+      <a class="logo" href="https://www.ftrprf.be" target="_blank" rel="noopener"><img class="logo-dots" src="logo.png" alt="FTRPRF"><img class="logo-text" src="logo.png" alt="" aria-hidden="true"></a>
+      <a class="nav-link" href="index.html">🎮 Oefening</a>
+    </div>
+    <div class="hero-inner">
+      <span class="pill">IT&amp;ME · Bits &amp; Bytes · Binaire getallen</span>
+      <h1>🏆 <span class="hl">Highscores</span></h1>
+      <p>De 10 snelste spelers op deze computer. Bij gelijke tijd wint wie de minste fouten maakte.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <table class="score-table">
+        <thead><tr><th>#</th><th>Naam</th><th>Tijd</th><th>Fouten</th></tr></thead>
+        <tbody id="scorelijst"></tbody>
+      </table>
+      <div id="laatste"></div>
+
+      <div class="actions">
+        <a href="index.html" class="btn btn-primary">Start nieuw spel 🚀</a>
+        <button class="btn btn-ghost" id="wisBtn">Scores wissen</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>Uit <strong>IT&amp;ME</strong> · module <strong>Bits &amp; Bytes</strong> &nbsp;|&nbsp; &copy; <a href="https://www.ftrprf.be" target="_blank" rel="noopener">FTRPRF.be</a></footer>
+
+  <script src="scores.js"></script>
+</body>
+</html>
